@@ -15,6 +15,8 @@ class AuthManager: NSObject, ObservableObject {
     }
     
     @Published var state: SignInState = .signedOut
+    @Published var email: String?
+    @Published var fullName: String?
     
     func successAppleSignIn() {
         self.state = .signedIn

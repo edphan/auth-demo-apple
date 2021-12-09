@@ -37,7 +37,7 @@ struct DashboardView: View {
         let db = Firestore.firestore()
         let userUID = Auth.auth().currentUser?.uid
         let path = db.collection("users").document(userUID!)
-        path.setData(["email": Auth.auth().currentUser?.email]) { error in
+        path.setData(["email": model.email ?? "no email"]) { error in
             if error == nil {
                 //
             } else {
